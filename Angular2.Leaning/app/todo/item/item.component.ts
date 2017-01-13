@@ -14,14 +14,14 @@ export class TodoItemComponent {
     constructor(private todoService: TodoService, private router: Router) {
     }
 
-    gotoDetail(todo) {
+    gotoDetail(todo:Todo) {
         this.router.navigate(['/todo/detail', todo.id]);
     }
 
-    toggleTodoComplete(todo) {
+    toggleTodoComplete(todo:Todo) {
         this.todoService.toggleTodoComplete(todo);
     }
-    removeTodo(todo) {
+    removeTodo(todo:Todo) {
         this.todoService.deleteTodoById(todo.id);
     }
 }

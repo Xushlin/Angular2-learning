@@ -53,7 +53,7 @@ export class EmployeeListComponent {
   gotoDetail(employee:Employee){
     this.router.navigate(['/employee/detail', employee.Id]);
   }
-  getEmployees(emps){
+  getEmployees(emps:any){
     this.employees=emps
   }
 }

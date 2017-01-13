@@ -69,8 +69,5 @@ export class EmployeeService{
         return this.http.get(this.employeeUrl+"/"+term).map(this.extractData)
             .catch(this.handleError);
     }
-    toggleEmployeeComplete(employee: Employee){
-         return null;
-    }
 
 }
