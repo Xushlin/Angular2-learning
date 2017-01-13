@@ -1,0 +1,70 @@
+<p>Example page</p>
+
+<p>{{example.name}}</p>
+<label>Binding, (ngModel)</label>
+<label>{{example.title}}</label>
+<input class="form-control" [value]="example.title" (input)="example.title=$event.target.value" >
+<hr>
+<input class="form-control" [(ngModel)]="example.title" >
+<hr>
+<input class="form-control" [ngModel]="example.title" (ngModelChange)="example.title=$event">
+<hr>
+<label>NgClass </label>
+<!-- toggle the "special" class on/off with a property -->
+<div [class.special]="isSpecial">The class binding is special</div>
+<hr>
+
+<div [ngClass]="setClasses()">The class binding is special</div>
+<hr>
+
+<label>ngStyle</label>
+<div [style.font-size]="isSpecial ? 'x-large' : 'smaller'" >
+    This div is x-large.
+</div>
+<div [ngStyle]="setStyles()">
+    This div is italic, normal weight, and extra large (24px).
+</div>
+<hr>
+<label>ngIf</label>
+<div *ngIf="example"> this is ngIf:{{example.name}}</div>
+
+<div *ngIf="nullobj">Hello,{{nullobj.name}}</div>
+
+<hr>
+
+<label>show/hide</label>
+
+<!-- isSpecial is true -->
+<div  [class.hidden]="!isSpecial">Show with class</div>
+<div [class.hidden]="isSpecial">Hide with class</div>
+
+
+<div [style.display]="isSpecial ? 'block' : 'none'">Show with style</div>
+<div [style.display]="isSpecial ? 'none'  : 'block'">Hide with style</div>
+
+<hr>
+
+<label>NgSwitch</label>
+
+<span [ngSwitch]="toeChoice">
+  <span *ngSwitchCase="'Eenie'" (click)="changeChoice()" >Eenie</span>
+  <span *ngSwitchCase="'Meanie'">Meanie</span>
+  <span *ngSwitchCase="'Miney'">Miney</span>
+  <span *ngSwitchCase="'Moe'">Moe</span>
+  <span *ngSwitchDefault (click)="changeChoice()">other</span>
+</span>
+
+<label>ngFor</label>
+<div *ngFor="let exa of exapples;let i=index">
+    <p>index:{{i}}-id:{{exa.id}}-name:{{exa.name}}-title:{{exa.title}}</p>
+</div>
+
+<hr>
+
+<input type="text" #foo>
+<label>{{foo.value}}</label>
+<div class="form-group">
+    <button (click)="dec()" title="smaller">-</button>
+    <button (click)="inc()" title="bigger">+</button>
+    <label [style.font-size.px]="size">FontSize: {{size}}px</label>
+</div>

@@ -1,0 +1,16 @@
+.special{
+    background-color: #336699;
+    color: white;
+}
+.saveable{
+    color: blueviolet;
+    background-color:burlywood;
+    height: 40px;
+    border: 2px rebeccapurple dashed;
+    box-shadow: #777777;
+    border-radius: 4px;
+
+}
+.modified{
+    frot-size:12px;
+}

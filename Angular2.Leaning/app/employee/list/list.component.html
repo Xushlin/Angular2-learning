@@ -1,0 +1,91 @@
+﻿
+<section>
+  <header class="header">
+    <div class="container">
+      <h1>Employee Form</h1>
+      <form class="row" >
+        <div class="form-group">
+          <label >First Name {{newEmployee.FirstName}}</label>
+          <input  type="text" class="form-control" [(ngModel)]="newEmployee.FirstName" name="FirstName" >
+        </div>
+        <div class="form-group">
+          <label for="lastName">Last Name</label>
+          <input type="text" class="form-control" id="lastName" [(ngModel)]="newEmployee.LastName" name="LastName" required>
+        </div>
+        <div class="form-group">
+          <label for="age">Age</label>
+          <input type="number" class="form-control" id="age" [(ngModel)]="newEmployee.Age" name="Age" required>
+        </div>
+        <div class="form-group">
+          <label for="birthDate">BirthDate</label>
+          <input type="date" class="form-control" id="birthDate" [(ngModel)]="newEmployee.BirthDate" name="BirthDate" required>
+        </div>
+        <button type="button" class="btn btn-default" (click)="addEmployee()">Submit</button>
+      </form>
+    </div>
+    <!--<input class="new-todo" placeholder="Get things done!" autofocus="" [(ngModel)]="newTodo.firstName" (keyup.enter)="addTodo()">-->
+  </header>
+  <section class="page-header">
+    <input class="form-control" type="text" [formControl]="term"/> <button class="btn btn-primary">Add</button>
+    <input class="form-control" [value]="newEmployee.FirstName"
+           (input)="newEmployee.FirstName=$event.target.value" >
+
+  </section>
+  <section class="pager" *ngIf="employees.length > 0">
+
+
+    <table  class="table table-bordered table-striped">
+      <thead>
+      <tr>
+        <th>Id</th>
+        <td>FirstName</td>
+        <td>LastName</td>
+        <td>FullName</td>
+        <td>Age</td>
+        <td>BirthDate</td>
+        <td>Action</td>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let employee of employees">
+        <td>{{employee.Id}}</td>
+        <td>{{employee.FirstName}}</td>
+        <td>{{employee.LastName}}</td>
+        <td>{{employee.FullName}}</td>
+        <td>{{employee.Age}}</td>
+        <td>{{employee.BirthDate}}</td>
+        <td><i class="glyphicon glyphicon-edit" style="color: #336699" (click)="updateEmployee(employee)"> </i>
+          <i class="glyphicon glyphicon-trash" style="color:darkred" (click)="delete(employee.Id)"></i>
+          <i class="glyphicon glyphicon-circle-arrow-right" style="color:darkred" (click)="gotoDetail(employee)"></i>
+        </td>
+      </tr>
+      <!--<employee-item *ngFor="let todo of todos" [todo]="todo">-->
+      <!--</employee-item>-->
+      </tbody>
+    </table>
+  </section>
+  <footer class="footer" *ngIf="employees.length > 0">
+    <span class="todo-count pull-right"><strong>{{employees.length}}</strong> {{employees.length == 1 ? 'item' : 'items'}} left</span>
+  </footer>
+
+<!--  <button type="button" class="btn btn-primary" (click)="staticModal.show()">Static modal</button>-->
+<!---->
+<!--  <div class="modal fade" bsModal #staticModal="bs-modal" [config]="{backdrop: 'static'}"-->
+<!--       tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">-->
+<!--    <div class="modal-dialog modal-sm">-->
+<!--      <div class="modal-content">-->
+<!--        <div class="modal-header">-->
+<!--          <button type="button" class="close" aria-label="Close" (click)="staticModal.hide()">-->
+<!--            <span aria-hidden="true">&times;</span>-->
+<!--          </button>-->
+<!--          <h4 class="modal-title">Static modal</h4>-->
+<!--        </div>-->
+<!--        <div class="modal-body">-->
+<!--          This is static modal, backdrop click will not close it.-->
+<!--          Click <b>&times;</b> to close modal.-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+
+</section>

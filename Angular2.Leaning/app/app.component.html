@@ -1,0 +1,39 @@
+
+  <div class="navbar-wrapper">
+    <div class="container-flunt">
+      <nav class="navbar navbar-inverse navbar-static-top">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" routerLink="/todo/list">Angular2</a>
+          </div>
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+              <li routerLinkActive="active"><a routerLink="/todo/list">Home</a></li>
+              <li routerLinkActive="active"><a routerLink="/about">About</a></li>
+              <li routerLinkActive="active"><a routerLink="/todo/list">Todo</a></li>
+              <li routerLinkActive="active"><a routerLink="/example">Example</a></li>
+              <li routerLinkActive="active"><a routerLink="/employee/list">Employee</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </div>
+
+  <div class="container marketing">
+    <div class="featurette">
+      <router-outlet></router-outlet>
+    </div>
+    <hr class="featurette-divider">
+  
+    <footer>
+      <p class="pull-right"><a href="/">Back to top</a></p>
+      <p> 2016 Company, Inc .. <a href="/">by Michael</a> . <a href="/">Terms</a></p>
+    </footer>
+  </div>
